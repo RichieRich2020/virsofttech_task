@@ -5,10 +5,10 @@ import Cart from './components/Cart';
 import { useState } from 'react';
 
 function App() {
-  let [state, setState] = useState([]);
+  let [cart, setcart] = useState([]);
 
   function addhandle(obj) {
-    let array = [...state];
+    let array = [...cart];
     let flag = true;
     if (array.length > 0) {
       for (let ele of array) {
@@ -26,12 +26,12 @@ function App() {
       array.push(obj);
     }
 
-    setState([...array]);
+    setcart([...array]);
   }
   return (
     <>
       <Cards addhandle={addhandle} />
-      <Cart state={state} />
+      <Cart state={cart} />
     </>
   );
 }
